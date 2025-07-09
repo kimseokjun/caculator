@@ -1,14 +1,16 @@
-package lv1;
+package lv2;
 
 import java.util.Scanner;
 
-public class Caculator {
+public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String check = "";
-        while (!(check.equals("exit"))) {
 
+        Caculator c = new Caculator();
+
+        while (!(check.equals("exit"))) {
             System.out.print("첫번째 숫자를 입력하세요 : ");
             int firstNum =  getPositiveInt(sc);
             System.out.print("두번째 숫자를 입력하세요 : ");
@@ -19,27 +21,36 @@ public class Caculator {
 
             switch (operation) {
                 case '+':
-                    firstNum += secondNum;
+                    c.plus(firstNum, secondNum);
+                    c.setResults(firstNum+secondNum);
                     break;
                 case '-':
-                    firstNum -= secondNum;
+                    c.minus(firstNum, secondNum);
+                    c.setResults(firstNum-secondNum);
                     break;
                 case '/':
                     if (secondNum == 0) {
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                         break;
                     }
-                    firstNum  /= secondNum;
+                    c.div(firstNum, secondNum);
+                    c.setResults(firstNum/secondNum);
                     break;
                 case '*':
-                   firstNum *= secondNum;
+                    c.multi(firstNum, secondNum);
+                    c.setResults(firstNum*secondNum);
                     break;
                 default:
                     System.out.println("사용할수 없는 연산기호 입니다.");
             }
 
-            System.out.println("연산 결과 : " + firstNum);
-
+            System.out.println("get메서드를 통한 값 접근(results) : " + c.getResults());
+            System.out.print("첫번째 데이터를 삭제하려면 del 입력 : ");
+            String del = sc.next();
+            if (del.equals("del")) {
+                c.removeResult();
+                System.out.println("삭제후 데이터 내역 : " + c.getResults());
+            }
             System.out.print("더 계산하시겠습니까? (exit 입력시 종료) : ");
             check = sc.next();
         }
