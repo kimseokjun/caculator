@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Caculator {
 
-    private ArrayList<Integer> results = new ArrayList<>();
+    private final ArrayList<Integer> results = new ArrayList<>();
 
     public void plus(int firstNum, int secondNum) {
         results.add(firstNum + secondNum);

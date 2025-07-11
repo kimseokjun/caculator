@@ -21,11 +21,11 @@ public class App {
 
             switch (operation) {
                 case '+':
-                    c.plus(firstNum, secondNum);
+                    //c.plus(firstNum, secondNum);
                     c.setResults(firstNum+secondNum);
                     break;
                 case '-':
-                    c.minus(firstNum, secondNum);
+                    //c.minus(firstNum, secondNum);
                     c.setResults(firstNum-secondNum);
                     break;
                 case '/':
@@ -33,11 +33,11 @@ public class App {
                         System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                         break;
                     }
-                    c.div(firstNum, secondNum);
+                    //c.div(firstNum, secondNum);
                     c.setResults(firstNum/secondNum);
                     break;
                 case '*':
-                    c.multi(firstNum, secondNum);
+                    //c.multi(firstNum, secondNum);
                     c.setResults(firstNum*secondNum);
                     break;
                 default:
