@@ -21,7 +21,7 @@ public class App {
 
             switch (operation) {
                 case '+':
-                    //c.plus(firstNum, secondNum);
+                    //c.plus(firstNum, secondNum);  //처음에는 메서드로 구현하였는데 set을 활용하라고 되어있어 주석처리했습니다.
                     c.setResults(firstNum+secondNum);
                     break;
                 case '-':
