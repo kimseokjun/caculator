@@ -8,7 +8,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String check = "";
 
-        ArithmeticCalculator<Number> calculator = new ArithmeticCalculator<>(); //연산 기호를 생성자가 받도록함
+        ArithmeticCalculator<Number> calculator = new ArithmeticCalculator<>();
 
         while (!(check.equals("exit"))) {
             System.out.print("첫번째 숫자를 입력하세요 : ");
@@ -18,7 +18,6 @@ public class App {
 
             System.out.print("사직연산 기호를 입력하세요 : ");
             char operator = sc.next().charAt(0);
-
 
             double result = calculator.calculate(firstNum, secondNum,operator);
             System.out.println("결과 : " + result);

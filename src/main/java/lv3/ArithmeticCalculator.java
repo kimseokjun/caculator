@@ -10,7 +10,6 @@ public class ArithmeticCalculator<T extends Number> {
 
     private  char operator;// 연산 기호
 
-
     enum Operation {
         PLUS('+'){
             public <T extends Number> double cal(T firstNum, T secondNum){
@@ -33,7 +32,7 @@ public class ArithmeticCalculator<T extends Number> {
             }
         };
 
-        public abstract <T extends Number> double cal(T firstNum, T secondNum);
+       public abstract <T extends Number> double cal(T firstNum, T secondNum);
 
         private final char symbol;
 
